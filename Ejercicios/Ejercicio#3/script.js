@@ -42,3 +42,6 @@ sugerencia() {
     console.log(`Te sugiero ${elementoRandom.nombre} de ${elementoRandom.autor}`)
 }
 }
+
+console.log(estanteria.log());
+estanteria.sugerencia;
