@@ -11,7 +11,7 @@ const estanteria = {
     },
     {
         nombre: 'El ingenioso hidalgo Don Quijote de la Mancha',
-        nombre: 'Miguel de Cervantes',
+        autor: 'Miguel de Cervantes', 
         leido: false
     },
     {
@@ -25,23 +25,22 @@ const estanteria = {
         leido: false
     }],
     log() {
-    const { libros } = this;
-    let resultado = ''
-    for (const libro of libros) {
-        const prefijo = libro.leido ? 'Ya has' : 'Aun no has';
-        resultado = `${resultado}
-${prefijo} leído ${libro.nombre} de ${libro.autor}`
+        const { Libros } = this; 
+        let resultado = ''
+        for (const libro of Libros) { 
+            const prefijo = libro.leido ? 'Ya has' : 'Aun no has';
+            resultado = `${resultado}\n${prefijo} leído ${libro.nombre} de ${libro.autor}`
+        }
+        console.log(resultado)
+    },
+
+    sugerencia() {
+        const librosNoLeidos = this.Libros.filter(libro => !libro.leido)
+        const indiceRandom = Math.floor(librosNoLeidos.length * Math.random())
+        const elementoRandom = librosNoLeidos[indiceRandom]
+        console.log(`Te sugiero ${elementoRandom.nombre} de ${elementoRandom.autor}`)
     }
-    console.log(resultado)
-},
-
-sugerencia() {
-    const librosNoLeidos = this.libros.filter(libro => !libro.leido)
-    const indiceRandom = Math.floor(librosNoLeidos.length * Math.random())
-    const elementoRandom = librosNoLeidos[indiceRandom]
-    console.log(`Te sugiero ${elementoRandom.nombre} de ${elementoRandom.autor}`)
-}
 }
 
-console.log(estanteria.log());
-estanteria.sugerencia;
+estanteria.log(); 
+estanteria.sugerencia();

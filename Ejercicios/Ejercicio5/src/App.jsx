@@ -4,12 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { getImageUrl } from './utils.js';
 
-function MyButton(props){
-  return(
-    <button onClick={props.Fn}>Soy un botón custom y mi cuenta es: {props.count} </button>
-  );
-}
-
 function Avatar({ person, size }) {
   return (
     <img
@@ -25,7 +19,6 @@ function Avatar({ person, size }) {
 export default function Profile() {
   return (
     <div className="profile-container">
-      <h1>Ejercicio 5: Avatares con Props Complejas</h1>
 
       <Avatar
         size={100}
